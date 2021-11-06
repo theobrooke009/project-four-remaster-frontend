@@ -1,0 +1,660 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@700&display=swap');
+
+@import '~bulma/bulma.sass';
+
+
+body {
+  flex: 1;
+  overflow: auto;
+}
+.container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+
+.new-game-container {
+  padding-top: 50px;
+  padding-bottom: 75px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  
+  label {
+    text-shadow:none;
+
+  }
+}
+
+.user-nav {
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  padding: 0;
+ 
+  h1 {
+    font-size: 25px;
+    padding: 0 15px;
+  }
+  img {
+    padding: 0 15px;
+  }
+}
+
+.user-details {
+  display: flex;
+  justify-content: flex-start
+}
+
+.column {
+  img{
+    height: 400px;
+    width: 400px;
+  }
+}
+
+
+
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+  height: 75px;
+}
+
+.post-review {
+  display: flex;
+  justify-content: flex-start;
+
+  .text-box{
+    width: 600px;
+    height: 200px;
+  }
+  
+}
+
+.main {
+  display: flex;
+  justify-content: flex-start;
+}
+.register-container {
+  .join-message {
+    height: 100px;
+    border-bottom: 2px solid white;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 50px;
+    font-weight:bolder;
+    padding-left: 10px
+  }
+  .form {
+    font-size: 20px;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sign-in-form {
+    font-size: 20px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    .back-to-register {
+      margin-top: 40px;
+      width: 750px;
+    } 
+  }
+  .register-input {
+    width: 600px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  label {
+    font-size: 20px;
+    color: white;
+  }
+  button {
+    width: 600px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  height: 1000px;
+  background-image: url("../images/ps-store-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-shadow:
+  0.07em 0 black,
+  0 0.07em black,
+  -0.07em 0 black,
+  0 -0.07em black;
+}
+
+
+.second-container {
+  width: 1500px;
+}
+
+.third-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 600px;
+  .sign-in {
+    display: flex;
+    margin-top: 60px;
+  }
+  .welcome-message {
+    display: flex;
+    h3 {
+      color: white;
+    }
+  }
+}
+
+.landing {
+  border: 1px solid black;
+  width: 200px;
+  height: 300px;
+  align-items: center;
+  margin: 0 10px;
+  background-image: url('../images/background-pic.png');
+}
+
+#new-user {
+  width: 200px;
+  height: 298px;
+}
+
+.register {
+  background: rgb(22, 22, 99);
+}
+
+.header-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
+  padding-bottom: 30px;
+}
+
+.logo-container{
+  margin-bottom: 30px;
+}
+
+.ps4-logo {
+  
+  margin-left: 30px;
+  width: 400px;
+  height: 50px;
+}
+.ps-logo {
+  height: 50px;
+}
+
+.games-card {
+  display:flex;
+    img {
+      height: 225px;
+      width: 225px;
+    }
+    .card-content {
+      width: 175px;
+      height: 175px;
+      color: white;
+    }
+}
+
+.game-section:hover {
+  filter: brightness(140%);
+  transition: transform .2s;
+  border: solid grey .5px;
+}
+
+.store-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.games-container {
+  display: flex;
+  width: 1500px;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+
+  .game-cards {
+    margin-top: 150px;
+    display: flex;
+    width: 1400px;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+  }
+}
+
+.game-section {
+  
+  padding: 5px;
+  margin: 20px;
+  background-color: rgb(0, 52, 137);
+  color: white;
+  h1 {
+    font-weight:bolder;
+  }
+}
+
+.new-game {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-size: 40px;
+  }
+}
+
+.search-things{
+  display: flex;
+  justify-content: space-between;
+  position:fixed;
+  top:75px;
+  width:100%;
+  z-index:100;
+  margin-top: 20px;
+
+  width: 1400px;
+  height: 50px;
+  button {
+    margin-left: 10px;
+  }
+  .genre-select {
+    display: flex;
+    justify-content: flex-start;
+    width: 600px;
+    select {
+      margin: 0 30px;
+      // background-color: transparent;
+    }
+    .game-search-box {
+      width: 250px;
+      height: 40px;
+      
+    }
+  }
+  .price-select {
+    display: flex;
+    justify-content: flex-end;
+    width: 600px;
+  }
+}
+
+.navbar {
+  background-color: rgb(0, 52, 137);
+  font-weight: bolder;
+  a{
+    color: white;
+  }
+}
+
+
+.info-column {
+  min-width: 1050px;;
+}
+
+.profile-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 100px;
+  .profile-details {
+    display: flex;
+    justify-content: space-between;
+    img {
+      width: 300px;
+      height: 300px;
+    }
+    .like-button {
+      width: 300px;
+      height: 70px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .rating {
+      height: 75px;
+      width: 40px;
+    }
+  }
+
+}
+
+.title-holder {
+  width: 1350px;
+  h1 {
+    font-size: 75px;
+    margin-bottom: 10px;
+  }
+}
+
+.comment-container {
+  width: 400px;
+  height: 200px;
+  .comment-box {
+    height: 300px;
+  }
+}
+
+
+
+.recom-container {
+  width: auto;
+  .card-collection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+}
+.write-review {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.review-section{
+  align-content: left;
+}
+
+.review-div{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.review-header {
+  font-size: 40px;
+}
+
+
+.recommendations {
+  display: flex;
+  justify-content: flex-start;
+  h1 {
+    // margin-top: 20px;
+    margin-left: 20px;
+    font-size: 40px;
+  }
+  .recommend-section {
+    :hover {
+      filter: brightness(105%);
+      transition: transform .2s;
+    }
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: auto;
+    padding: 5px;
+    margin: 20px;
+    background-color: rgb(0, 52, 137);
+ 
+    h2 {
+      letter-spacing:2px;
+      font-size: 15px;
+font-weight:bolder;
+      color: white;
+    }
+    .recommend-card {
+      flex-direction: column;
+      align-items: center;
+      
+      display:flex;
+        img {
+          height: 250px;
+          width: 250px;
+        }
+        .card-content {
+          width: 100px;
+          height: 100px;
+          color: white;
+        }
+    }
+  }
+}
+
+.game-info {
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+  margin-bottom: 20px;
+  h2 {
+    width: auto;
+    font-size: 25px;
+    font-weight:bolder;
+    padding: 0 5px;
+  }
+}
+
+.game-outline {
+  height: 300px;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+  p {
+    color: white;
+    padding: 5px 15px;
+    font-size: 15px;
+    }
+
+  width: auto;
+  background-color: rgb(0, 52, 137);
+  
+  // opacity: 0.6;
+  margin-bottom: 20px;
+  font-size: 25px;
+ 
+
+}
+
+.user-nav {
+  position: fixed;
+  right: 0;
+  left: 0;
+  overflow-x: scroll;
+}
+
+.info-title {
+  padding: 5px, 15px;
+   color: white;
+  }
+
+.game-title {
+  padding-bottom: 15px;
+}
+
+.game-blurb {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.user-nav {
+  padding-top: 20px;
+  display: flex;
+  img {
+    height: 40px;
+    width: auto;
+  }
+}
+
+.user-prof-log-out{
+
+  margin-right: 25px;
+}
+
+.logout {
+  display: flex;
+  justify-content: flex-end;;
+}
+
+.user-games {
+  display: flex;
+  height: auto;
+  width: 2500px;
+  overflow-x: scroll;
+ 
+  .games-menu {
+    display: flex;
+    margin-top: 140px;
+    img {
+      
+      height: 400px;
+      width: 300px;
+      margin: 0 2px;
+    }
+    .menu-image:hover{
+     background-color: black;
+    }
+
+    .store-image {
+      margin-left: 30px;
+    }
+   
+    
+   }
+   .game-section {
+     margin: 0;
+   }
+  }
+
+  .start-game {
+    display: none;
+    color: white;
+    font-size: 30px;;
+    text-align: center;
+     margin: auto;
+    height: 50px;
+    background-color: black;
+  }
+
+  .user-games-card:hover {
+    .start-game {
+      display: block;
+      transition: .3s;
+    }
+    img {
+      transition: .3s;
+      height: 450px;
+      width: 350px;
+    }
+    border: 3px solid white;
+    transition: .4s;
+  }
+
+
+.user-details {
+  border-radius: 30px;
+}
+.reviews{
+  h2 {font-size: 40px;}
+  height: 50px;
+  
+  width: 600px;;
+
+  .user {
+   
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    
+    .user-comment{
+      width: 400px;
+      border-radius: 30px;
+      margin: 10px 0;
+
+    }
+    flex-wrap: wrap;
+    .user-details {
+      display: flex;
+      background-color: #f5f5f5 ;
+      margin: 10px;
+      
+      // width: auto;
+      height: 75px;
+       
+      display: flex;
+      flex-direction: column;
+      .user-name {
+        display: flex;
+        flex-wrap: wrap;
+        img{
+          margin: 10px;
+          height: 40px;
+          width: 40px;
+        }
+        margin: 5px, 20px;
+        background: rgb(0, 52, 137);
+        font-size: 20px;
+        h3 {
+          padding-left: 10px;
+          padding-top: 5px;
+          padding-bottom: 3px;
+        }
+      }
+      .comment-text {
+        height: 100px;
+        p {
+          padding-left: 10px;
+        }
+      }
+      p {
+       
+        padding-top: 5px;
+        padding-bottom: 3px;
+        font-size: 20px;
+        color: black;
+        
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
