@@ -9,12 +9,13 @@ function GameStore() {
   const [isError, setIsError] = React.useState(false)
   const [searchValue, setSearchValue] = React.useState('')
   const [devType, setDevType] = React.useState('AAA')
-  // const [gameSort, setGameSort] = React.useState('')
+  // const [gameSort, setGameSort] = React.useState('Select filter')
   const isLoading = !games && !isError
   const [formData, setFormData] = React.useState({
     genre: 'Add Filter',
-    sort: '',
+    sort: 'Select filter',
   })
+
 
 
 
@@ -34,6 +35,7 @@ function GameStore() {
 
   const handleChange = event => {
     setFormData({ ...formData, [event.target.name]: event.target.value })
+    
     setSearchValue('')
   }
 
@@ -44,10 +46,6 @@ function GameStore() {
       })
     } 
   }
-
-  
-
-
 
   const searchGames = () => {
     if (searchValue) {
@@ -81,19 +79,30 @@ function GameStore() {
     setSearchValue(e.target.value)
     setFormData({
       genre: 'Add Filter',
-      sort: '',
+      sort: 'Select filter',
     })
   }
 
+  console.log(formData.sort)
 
-
-  const clickyBoi = (games) => {
-    if (games) {
-      return games.sort((a, b) => (a.name > b.name) ? 1 : (a.name === b.name) ? ((a.name > b.name) ? 1 : -1) : -1 )
+  const sortAlphabetical = () => {
+    if (formData.sort === 'Name A-Z'){
+      console.log('sorted')
+      return games.sort((a, b) => a.name.localeCompare(b.name)) 
+    } else if (formData.sort === 'Price Low-High') {
+      return games.sort(function(a, b) {
+        return parseFloat(a.price) - parseFloat(b.price)
+      })
+    } else if (formData.sort === 'Price High-Low') {
+      return games.sort(function(a, b) {
+        return parseFloat(b.price) - parseFloat(a.price)
+      })
     }
   }
 
-  console.log(clickyBoi())
+  
+ 
+
 
   
   
@@ -141,9 +150,9 @@ function GameStore() {
         <div className="price-select is-half">
           <div className="select">
             <select
-              name="genre"
+              name="sort"
               value={formData.sort}
-              onChange={clickyBoi}>
+              onChange={handleChange}>
               <option value="Select filter">Select filter</option>
               <option value="Name A-Z">Name A-Z</option>
               <option value="Price High-Low">Price High-Low</option>
@@ -158,7 +167,7 @@ function GameStore() {
         {isError && <Error />}
         {isLoading && <Loading />}
         <div className="game-cards">
-          {games && formData.genre === 'Add Filter' && !searchValue &&
+          {games && formData.genre === 'Add Filter' && !searchValue && formData.sort === 'Select filter' &&
           filterDev().map(game => (
             <GameCard key={game.id} game={game} />
           ))}
@@ -185,12 +194,24 @@ function GameStore() {
         </div>
       </div>
       <div className="games-container">
-        {/* <div className="columns">
+        <div className="game-cards">
           {games && formData.sort === 'Name A-Z'  &&
           sortAlphabetical().map(game => (
             <GameCard key={game.id} game={game} />
           ))}
-        </div> */}
+        </div>
+        <div className="game-cards">
+          {games && formData.sort === 'Price Low-High'  &&
+          sortAlphabetical().map(game => (
+            <GameCard key={game.id} game={game} />
+          ))}
+        </div>
+        <div className="game-cards">
+          {games && formData.sort === 'Price High-Low'  &&
+          sortAlphabetical().map(game => (
+            <GameCard key={game.id} game={game} />
+          ))}
+        </div>
       </div>
     </section>
   )
