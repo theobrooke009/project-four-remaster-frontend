@@ -9,19 +9,14 @@ function GameStore() {
   const [isError, setIsError] = React.useState(false)
   const [searchValue, setSearchValue] = React.useState('')
   const [devType, setDevType] = React.useState('AAA')
+  // const [gameSort, setGameSort] = React.useState('')
   const isLoading = !games && !isError
   const [formData, setFormData] = React.useState({
     genre: 'Add Filter',
     sort: '',
   })
 
-  console.log(isError)
-  console.log(setFormData)
-  console.log(setDevType)
 
-  
-
-  console.log('here', games)
 
   React.useEffect(() => {
     const getData = async () => {
@@ -49,6 +44,10 @@ function GameStore() {
       })
     } 
   }
+
+  
+
+
 
   const searchGames = () => {
     if (searchValue) {
@@ -86,7 +85,18 @@ function GameStore() {
     })
   }
 
-  console.log(filterGames)
+
+
+  const clickyBoi = (games) => {
+    if (games) {
+      return games.sort((a, b) => (a.name > b.name) ? 1 : (a.name === b.name) ? ((a.name > b.name) ? 1 : -1) : -1 )
+    }
+  }
+
+  console.log(clickyBoi())
+
+  
+  
 
   return (
     <section className="store-section">
@@ -133,8 +143,8 @@ function GameStore() {
             <select
               name="genre"
               value={formData.sort}
-              onChange={handleChange}>
-              <option value="Select filter" disabled>Select filter</option>
+              onChange={clickyBoi}>
+              <option value="Select filter">Select filter</option>
               <option value="Name A-Z">Name A-Z</option>
               <option value="Price High-Low">Price High-Low</option>
               <option value="Price Low-High">Price Low-High</option>
@@ -174,14 +184,14 @@ function GameStore() {
           ))}
         </div>
       </div>
-      {/* <div className="games-container">
-        <div className="columns">
+      <div className="games-container">
+        {/* <div className="columns">
           {games && formData.sort === 'Name A-Z'  &&
-          sortGames().map(game => (
+          sortAlphabetical().map(game => (
             <GameCard key={game.id} game={game} />
           ))}
-        </div>
-      </div> */}
+        </div> */}
+      </div>
     </section>
   )
 }

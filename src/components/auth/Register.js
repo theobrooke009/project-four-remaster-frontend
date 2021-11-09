@@ -15,6 +15,7 @@ function Register() {
   const history = useHistory()
   const [formData, setFormdata] = React.useState(initialState)
   const [formErrors, setFormErrors] = React.useState(initialState)
+  const [error, setError] = React.useState(false)
 
   const handleChange = e => {
     setFormdata({ ...formData, [e.target.name]: e.target.value })
@@ -27,7 +28,10 @@ function Register() {
       await registerUser(formData)
       history.push('/login')
     } catch (err) {
-      console.log(err)
+      console.log(err.response.data.password[0])
+      if (err.response.data.password[0]) {
+        setError(err.response.data.password[0])
+      }
     }
   }
 
@@ -60,6 +64,7 @@ function Register() {
           </div>
           <div className='field '>
             <label className='label'>Password</label>
+            {error === 'This password is too short. It must contain at least 8 characters.' && <p className='password-error'>{error}</p>}
             <div className='control'>
               <input className='register-input' 
                 type="password"

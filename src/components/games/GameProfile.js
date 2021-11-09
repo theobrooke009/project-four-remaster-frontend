@@ -20,6 +20,7 @@ function ShowOneGame() {
 
   console.log(isError)
   console.log(user)
+  console.log(game)
 
 
   React.useEffect(() => {
