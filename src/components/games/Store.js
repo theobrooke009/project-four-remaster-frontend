@@ -40,6 +40,7 @@ function GameStore() {
   }
 
   const filterGames = () => {
+    console.log(formData)
     if (formData) {
       return games.filter(game => {
         return game.genre.includes(formData.genre)
@@ -83,11 +84,10 @@ function GameStore() {
     })
   }
 
-  console.log(formData.sort)
+  
 
   const sortAlphabetical = () => {
     if (formData.sort === 'Name A-Z'){
-      console.log('sorted')
       return games.sort((a, b) => a.name.localeCompare(b.name)) 
     } else if (formData.sort === 'Price Low-High') {
       return games.sort(function(a, b) {
@@ -135,7 +135,7 @@ function GameStore() {
               <option value="Racing">Racing</option>
               <option value="First Person Shooter">First Person Shooter</option>
               <option value="Strategy">Strategy</option>
-              <option value="Stealth Action">Stealth Action</option>
+              <option value="Stealth Action">Stealth</option>
             </select>
           </div>
 
@@ -162,19 +162,19 @@ function GameStore() {
         </div>
 
       </div>
-    
+      {games && formData.genre === 'Add Filter' && !searchValue && formData.sort === 'Select filter' &&
       <div className="games-container">
         {isError && <Error />}
         {isLoading && <Loading />}
         <div className="game-cards">
-          {games && formData.genre === 'Add Filter' && !searchValue && formData.sort === 'Select filter' &&
-          filterDev().map(game => (
-            <GameCard key={game.id} game={game} />
-          ))}
+          {
+            filterDev().map(game => (
+              <GameCard key={game.id} game={game} />
+            ))}
         </div>
-      </div>
+      </div>}
 
-      <div className="games-container">
+      <div className="games-container hello">
         {isError && <Error />}
         {isLoading && <Loading />}
         <div className="game-cards">
@@ -184,15 +184,16 @@ function GameStore() {
           ))}
         </div>
       </div>
-
+      {games && formData.genre !== 'Add Filter'  &&
       <div className="games-container">
         <div className="game-cards">
-          {games && formData.genre !== 'Add Filter'  &&
-          filterGames().map(game => (
-            <GameCard key={game.id} game={game} />
-          ))}
+          {
+            filterGames().map(game => (
+              <GameCard key={game.id} game={game} />
+            ))}
         </div>
-      </div>
+      </div>}
+
       <div className="games-container">
         <div className="game-cards">
           {games && formData.sort === 'Name A-Z'  &&

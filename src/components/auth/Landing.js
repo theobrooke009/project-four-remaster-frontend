@@ -11,7 +11,8 @@ function LoginOrRegister() {
 
 
   const handleClick = (event) => {
-    if (event.target.innerHTML === 'login')
+    console.log(event.target.alt)
+    if (event.target.alt === 'login')
       history.push('/login')
     else if (event.target.alt === 'register')
       history.push('/register')
@@ -22,8 +23,8 @@ function LoginOrRegister() {
     <div className='main'>
       <div className='second-container'>
         <img className='ps4-logo'src={logo}/>
-        <div className='third-container'>
-          <div className='container is-max-desktop'>
+        <div className='third-container is-max-desktop'>
+          <div className='container'>
             <div className='welcome-message'>
               <h3>DUALSHOCK 4 wireless controller connected. Who is using this controller?</h3>
             </div>
@@ -35,7 +36,7 @@ function LoginOrRegister() {
                 </div>
               </div>
               <div className='landing'>
-                <div alt='register'
+                <div alt='register'className='register'
                   onClick={handleClick}>
                   <img id='new-user' src={psLogin} alt='login'/>
                 </div>

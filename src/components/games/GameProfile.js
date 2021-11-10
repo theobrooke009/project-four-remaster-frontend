@@ -73,8 +73,8 @@ function ShowOneGame() {
   const filterByGenre = () => {
     if (game && allGames) {
       return allGames.filter( item => {
-        return item.genre === game.genre && item.name !== game.name
-      })
+        return item.genre.includes(game.genre) && item.name !== game.name
+      }).slice(0,3)
     }
   }
 
