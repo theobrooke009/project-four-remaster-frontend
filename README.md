@@ -4,6 +4,16 @@
 
 This was my final project on the General Assembly Software Engineering Course, and was undertaken in the final week of the course.
 
+## Installation Instructions
+- Clone repo code from GitHub
+- Run pipenv i in the root directory to install all packages from Pipfile.
+- Run pipenv shell in the root directory to spawn a shell within the virtual environment.
+- Use python manage.py runserver to start the backend server in the root directory.
+- Open a second window of VS Code and open client.
+- Use npm i in client to install all dependencies.
+- Run npm run dev from client to start the frontend.
+
+
 ## Goal and Timeframe
 
 For Project 4 we had 7 days to build a full stack RESTful app with CRUD functionality, using React.js and Django.
